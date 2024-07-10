@@ -1,6 +1,6 @@
 // Chart/Chart.tsx
 "use client";
-import React,{ useState } from "react";
+import React from "react";
 import NoHistory from "./NoHistory";
 
 const History: React.FC = () => {

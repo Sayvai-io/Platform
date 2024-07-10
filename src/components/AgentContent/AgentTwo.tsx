@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
 
 const AgentTwo: React.FC = () => {
   const [selectedLLM, setSelectedLLM] = useState("GPT 3.5 Turbo");
