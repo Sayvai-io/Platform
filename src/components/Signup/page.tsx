@@ -11,7 +11,7 @@ const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11aXpuZGhrcGRnbWN2eWN0ZmltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE2MzU2NDQsImV4cCI6MjAzNzIxMTY0NH0.EqKsWHm3sAXV6jeMmcBiswc0Hd91vHPjv-_lhNRbev8";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const Signup: React.FC = () => {
+const Signup: React.FC<{ setShowSignup: (show: boolean) => void }> = ({ setShowSignup }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -100,14 +100,14 @@ const Signup: React.FC = () => {
           </button>
         </form>
         <p className="text-gray-600 text-center text-sm">
-          Already a user?{" "}
-          <button
-            onClick={() => setShowLogin(true)}
-            className="text-indigo-600 hover:underline"
-          >
-            Login
-          </button>
-        </p>
+        Already a user?{" "}
+        <button
+          onClick={() => setShowSignup(false)}
+          className="text-indigo-600 hover:underline"
+        >
+          Login
+        </button>
+      </p>
       </div>
     </div>
   );

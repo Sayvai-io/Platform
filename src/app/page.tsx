@@ -1,24 +1,20 @@
-import { Metadata } from "next";
+// src/app/page.tsx
+'use client';
+import { useState } from "react";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import Agent from "@/components/Agent/page";
 import Login from "@/components/Login/page";
 import Signup from "@/components/Signup/page";
 
-export const metadata: Metadata = {
-  title: "sayvai",
-  description: "sayvai",
-};
-
 export default function Home() {
+  const [showSignup, setShowSignup] = useState(false);
+
   return (
     <>
-      <div>
-        <Signup />
-      </div>
-
-      {/*<DefaultLayout>*/}
-      {/*  <Agent />*/}
-      {/*</DefaultLayout>*/}
+      {showSignup ? (
+        <Signup setShowSignup={setShowSignup} />
+      ) : (
+        <Login setShowSignup={setShowSignup} />
+      )}
     </>
   );
 }

@@ -14,7 +14,7 @@ interface LoginProps {
   setShowLogin: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Login: React.FC<LoginProps> = ({ setShowLogin }) => {
+const Login: React.FC<{ setShowSignup: (show: boolean) => void }> = ({ setShowSignup }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -98,14 +98,14 @@ const Login: React.FC<LoginProps> = ({ setShowLogin }) => {
           </button>
         </form>
         <p className="text-gray-600 text-center text-sm">
-          Don't have an account?{" "}
-          <button
-            onClick={() => setShowLogin(false)}
-            className="text-indigo-600 hover:underline"
-          >
-            Signup
-          </button>
-        </p>
+        Don't have an account?{" "}
+        <button
+          onClick={() => setShowSignup(true)}
+          className="text-indigo-600 hover:underline"
+        >
+          Signup
+        </button>
+      </p>
       </div>
     </div>
   );
