@@ -1,19 +1,24 @@
 import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import Agent from "@/components/Agent/page";
+import Login from "@/components/Login/page";
+import Signup from "@/components/Signup/page";
 
 export const metadata: Metadata = {
-  title:
-    "sayvai",
+  title: "sayvai",
   description: "sayvai",
 };
 
 export default function Home() {
   return (
     <>
-      <DefaultLayout>
-        <Agent />
-      </DefaultLayout>
+      <div>
+        <Signup />
+      </div>
+
+      {/*<DefaultLayout>*/}
+      {/*  <Agent />*/}
+      {/*</DefaultLayout>*/}
     </>
   );
 }
